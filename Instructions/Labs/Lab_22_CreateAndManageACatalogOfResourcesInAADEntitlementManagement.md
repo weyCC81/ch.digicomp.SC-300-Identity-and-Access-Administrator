@@ -42,6 +42,7 @@ A catalog is a container of resources and access packages. You create a catalog 
 7. Under **Enabled, select No**.
 
 - - **Enabled for external users** allows users in selected external directories to be able to request access packages in this catalog. No changes will be made to this setting.
+    <mark>Not possible to Enable</mark>
 
 9. You may choose to enable the catalog for immediate use or disable if you intend to stage it or keep it unavailable until you intend to use it. For this exercise, the catalog does not need to be enabled.
 
@@ -73,6 +74,7 @@ To include resources in an access package, the resources must exist in a catalog
 6. You may not have any resources in Groups and Teams, Applications, or SharePoint sites. Select any resource category and then select a resource from that category.
 
 7. For this exercise, it is okay to choose any resource you may have available.
+    <mark>Microsoft Entra role (Coming soon) [New]</mark>
 
     ![Add resources to a catalog](./media/catalog-add-resources.png)
 
