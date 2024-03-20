@@ -29,6 +29,8 @@ You need to identify and update the different properties associated with your te
     sales.labtenant.onmicrosoft.com
     ```
 
+    <mark>labtenant = [Tenantname] = WWLxZZZZZZZ</mark>
+
 1. Select **Add domain** to add the subdomain.
 
 

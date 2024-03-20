@@ -35,17 +35,33 @@
 
 - Default user permissions (Self-Service vs Managed by Admin): <https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions>
 
-Custom security (cloud, entra private) vs Extension attribute (cloud, entra public) vs Custom attribute (on-prem, exchange)
+Custom security (Cloud, Entra private) vs Extension attribute (Cloud, Entra public) vs Custom attribute (on-prem, exchange)
 
 User Type: Member vs Guest (convert to Member = More Access)
 
-Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed for Entra joined devices)
+Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed for Entra joined devices), Hard to Validate with Edge Browser (Cached Credentials)
 
-<!--
 ## Learning Path 3 - Implement an Authentication and Access Management solution
 
-## Learning Path 4 - Implement Access Management for Apps
+Conditional Access vs Default Security vs "per User MFA" (Legacy MFA Portal)
 
+Authentication methods (MFA, Password-less, Strength)
+Self-Service Password Reset (SSPR)
+
+- Smart Lockout vs User Lock (Not synced)
+  - Verhalten mit PTA und ADFS (User Lock impact) vs PHS (User Lock no impact)
+  - Smart Lockout to Locations (IP-Ranges) instead of whole User Account
+
+Login with Microsoft Entra ID (+ System assigned managed identity in Azure)
+
+Conditional Access (Exclude vs Include, Frequency, Debugging)
+
+Risk Policy (Risky Event vs Risky User)  {Hint: Risky Guest-User in Guest-Tenant}
+
+Azure Roles (Key Vault Options, usw.)
+
+<!--
+## Learning Path 4 - Implement Access Management for Apps
 ## Learning Path 5 - Plan and Implement an Identity Governance Strategy
 -->
 
@@ -99,3 +115,15 @@ Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed f
 
 Managed Domain = Entra ID (Azure) for Internal User
 Federated Domain = ADFS for Internal User
+
+### MFA Registration (Optional)
+
+<https://aka.ms/mfasetup>
+> The URL is for setting up multi-factor authentication (MFA) for Microsoft accounts. When users visit this URL, they are typically directed to a page where they can configure multi-factor authentication settings for their Microsoft accounts, adding an extra layer of security beyond just a password.
+
+Source: <https://msportals.io>
+
+### Managed identity with Azure KeyVault
+
+<y see [path3_lab16_t5_keyvault.ps1]
+<https://learn.microsoft.com/en-us/azure/frontdoor/managed-identity>
