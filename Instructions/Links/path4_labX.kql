@@ -1,0 +1,8 @@
+
+SigninLogs
+// | where OperationName == "Sign-in activity" and UserPrincipalName == "admin@WWLx360389.onmicrosoft.com"
+ | where OperationName == "Sign-in activity" and UserPrincipalName == "admin@wwlx360389.onmicrosoft.com"
+// | extend AccountCustomEntity = UserPrincipalName
+// | extend IPCustomEntity = IPAddress
+ | summarize by UserPrincipalName, IPAddress
+

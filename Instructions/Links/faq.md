@@ -46,10 +46,13 @@ Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed f
 Conditional Access vs Default Security vs "per User MFA" (Legacy MFA Portal)
 
 Authentication methods (MFA, Password-less, Strength)
-Self-Service Password Reset (SSPR)
+Self-Service Password Reset (SSPR) --> No Security Questions for Admin
 
 - Smart Lockout vs User Lock (Not synced)
   - Verhalten mit PTA und ADFS (User Lock impact) vs PHS (User Lock no impact)
+    - ADFS (External Lock [WAP], AD Lock = External locks must be higher)
+    - PTA (Smart Lock + AD Lock = Smart locks must be higher)
+    - PHS (just Smart Lock)
   - Smart Lockout to Locations (IP-Ranges) instead of whole User Account
 
 Login with Microsoft Entra ID (+ System assigned managed identity in Azure)
@@ -60,10 +63,33 @@ Risk Policy (Risky Event vs Risky User)  {Hint: Risky Guest-User in Guest-Tenant
 
 Azure Roles (Key Vault Options, usw.)
 
-<!--
 ## Learning Path 4 - Implement Access Management for Apps
+
+MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)
+CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
+
+Enterprise App (SAML) vs Application Registration (OpenID (OIDC))
+Gallery (Verification by Microsoft, Template), Mutli-Tenant App, Single-Tenant App
+
+User Consent (Default Allowed, Restriction possible) vs Tenant-Wide Consent (by Admin)
+
+Example App: LastPass, Vertec, usw.
+
+Graph API over PowerShell vs Graph Explorer (REST API, JSON)
+
 ## Learning Path 5 - Plan and Implement an Identity Governance Strategy
--->
+
+LifeCycle (Join, Leaver), Terms of use (ToS), Access Review
+
+PIM
+> In the context of Entra ID (Azure AD), Privileged Identity Management (PIM) refers to a feature that helps organizations manage, control, and monitor access to privileged roles within Azure AD and other Microsoft cloud services
+
+KQL
+> KQL typically stands for "Kusto Query Language." Kusto is a query language used in Azure Data Explorer, Azure Monitor, and Azure Sentinel, among other Microsoft services. It's designed for querying large datasets quickly and efficiently. KQL is similar to SQL (Structured Query Language) but tailored specifically for these Azure services. It's commonly used for analyzing and querying data in cloud environments, especially for monitoring, logging, and analytics purposes.
+
+Secure Score (wait ~1 day for updates)
+
+Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templaes)
 
 ## More
 
@@ -89,12 +115,6 @@ Azure Roles (Key Vault Options, usw.)
 ### Access Review
 
 > Principle of least privilege
-
-### Break-glass account
-
-> Emergency access accounts are limited to emergency or “break glass” scenarios where normal administrative accounts can’t be used.
-> Implement strict security controls—always
-> Validate break-glass accounts
 
 ### Secure Score
 
@@ -123,7 +143,46 @@ Federated Domain = ADFS for Internal User
 
 Source: <https://msportals.io>
 
+### Login with Microsoft Entra ID (+ Managed Identity on Azure VM)
+
+<https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows#configure-role-assignments-for-the-vm>
+
 ### Managed identity with Azure KeyVault
 
-<y see [path3_lab16_t5_keyvault.ps1]
+> see [path3_lab16_t5_keyvault.ps1]
 <https://learn.microsoft.com/en-us/azure/frontdoor/managed-identity>
+
+### App Registration Example
+
+> Plattform: Single-page application, Mobile and desktop applications, iOS/macOS, Android
+
+- Business Applicatio - LastPass
+  - EN: <https://support.lastpass.com/s/document-item?language=en_US&sfdcIFrameOrigin=null&bundleId=lastpass&topicId=LastPass%2FFederated_Azure_AD_step3_create_login_app.html&_LANG=dede>
+  - DE: <https://support.lastpass.com/s/document-item?language=de&sfdcIFrameOrigin=null&bundleId=lastpass&topicId=LastPass/Federated_Azure_AD_step3_create_login_app.html&_LANG=dede>
+- Business Application - Vertec
+  - <https://www.vertec.com/ch/kb/openid-connect/>
+
+### Friendly Takeover, Internal admin takeover
+
+<https://learn.microsoft.com/en-us/microsoft-365/admin/misc/become-the-admin?view=o365-worldwide>
+
+### Emergency Admin, Break-glass account
+
+> Emergency access accounts are limited to emergency or “break glass” scenarios where normal administrative accounts can’t be used.
+> Implement strict security controls—always
+> Validate break-glass accounts
+
+<https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access>
+
+### Entra Export
+
+> Export Configuration Settings (+ Microsoft 365 Groups)
+
+<https://github.com/microsoft/EntraExporter>
+<https://office365itpros.com/2023/08/24/entraexporter-tool/>
+
+### Microsoft 365 DSC
+
+> Copy Tenant Settings, Tenant Configuration Drift
+
+<https://microsoft365dsc.com/>

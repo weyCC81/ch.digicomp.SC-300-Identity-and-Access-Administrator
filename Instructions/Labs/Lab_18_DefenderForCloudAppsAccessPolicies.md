@@ -108,7 +108,7 @@ Registering your application establishes a trust relationship between your app a
 
 #### Task 3 - Review the Activity in Defender for Cloud Apps
 
-1. Return to the browswer running Defender for Cloud Apps.
+1. Return to the browser running Defender for Cloud Apps.
 2. Refresh the browser to ensure the most recent data is downloaded.
 3. From the **Investigate** menu, select **Activity log**.
 4. Using the **App: filter** pick **Microsoft Forms** from the list.
