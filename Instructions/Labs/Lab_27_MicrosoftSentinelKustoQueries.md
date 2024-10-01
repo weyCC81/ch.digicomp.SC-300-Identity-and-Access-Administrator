@@ -11,7 +11,7 @@ lab:
 
 ## Lab scenario
 
-Microsoft Sentinel is Microsoft's cloud-native SIEM and SOAR solution.  Through connecting data sources from Microsoft and third-party security solutions, you have the ability to execute security operations tasks.  In this lab exercise, you will create a Microsoft Sentinel workspace with data connectors to Azure AD for executing hunting queries using Kusto Query Language (KQL). 
+Microsoft Sentinel is Microsoft's cloud-native SIEM and SOAR solution.  Through connecting data sources from Microsoft and third-party security solutions, you have the ability to execute security operations tasks.  In this lab exercise, you will create a Microsoft Sentinel workspace with data connectors to Microsoft Entra ID for executing hunting queries using Kusto Query Language (KQL). 
 
 #### Estimated time: 30 minutes
 
@@ -39,7 +39,7 @@ Microsoft Sentinel is Microsoft's cloud-native SIEM and SOAR solution.  Through 
 
 1. If prompted, select **OK** to activate the Microsoft Sentinel free trial.
 
-#### Task 2 - Add Azure AD as a Data source
+#### Task 2 - Add Microsoft Entra ID as a Data source
     **Note** - As of 2/8/2024, the data source is now Microsoft Entra ID.
 
 1. In **Microsoft Sentinel**, navigate on the menu to **Content management** and select **Content hub**.
@@ -77,11 +77,3 @@ Microsoft Sentinel is Microsoft's cloud-native SIEM and SOAR solution.  Through 
 1. Select **Run**. 
 
 1. This will provide a list of User IDs on Microsoft Entra ID.  Since we have just created the workspace, you may not see results.  Note the format of the query.
-
-1. Under **Threat management** in the menu, select **Hunting**. 
-
-1. Scroll down to find the query **Anomalous sign-in location by user account and authenticating application**.  This query over Microsoft Entra sign-in considers all user sign-ins for each Microsoft Entra application and picks out the most anomalous change in location profile for a user within an individual application. The intent is to hunt for user account compromise, possibly via a specific application vector. 
-
-1. Select **View query results** to run the query.
-
-1. This may not provide results with the new workspace, but you now have seen how queries can be run to gather information or for hunting potential threats.

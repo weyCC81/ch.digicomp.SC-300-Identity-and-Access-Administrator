@@ -19,7 +19,9 @@ You need to identify and update the different properties associated with your te
 
 1. Browse to the [https://entra.microsoft.com](https://entra.microsoft.com) and sign in using a Global administrator account for the directory.
 
-1. In the **Identity** menu open the **Settings** menu, select **Domain names**.
+1. In the **Identity** menu, use the **Show more* option at the bottom.
+
+1.  Open the **Settings** menu, select **Domain names**.
 
 1. Select **+ Add custom domain**.
 
@@ -30,6 +32,8 @@ You need to identify and update the different properties associated with your te
     ```
 
     <mark>labtenant = [Tenantname] = WWLxZZZZZZZ</mark>
+
+1. **Note** - You will be prompted to open the Microsoft 365 Admin center to complete this action.
 
 1. Select **Add domain** to add the subdomain.
 
@@ -61,7 +65,7 @@ You need to identify and update the different properties associated with your te
 
     **IMPORTANT** - When the tenant is created, the Country or region are specified at that time. This setting cannot be changed later.
 
-3. In the **Properties** page, under **Tenant properties**, locate **Location** and review the information.
+3. In the **Properties** page, under **Tenant properties**, locate ** Data Location** and review the information.
 
     ![Screen image showing the Azure Active Directory Properties page with the Country or region and Location settings highlighted](./media/azure-active-directory-properties-country-location.png)
 
@@ -79,13 +83,13 @@ Azure subscriptions have a trust relationship with Microsoft Entra ID. Microsoft
 
 ### Exercise 3 - Setting your privacy information
 
-#### Task 1 - Adding your privacy info on Azure AD, including Global privacy contact and Privacy statement URL
+#### Task 1 - Adding your privacy info on Microsoft Entra ID, including Global privacy contact and Privacy statement URL
 
 Microsoft strongly recommends you add both your global privacy contact and your organization's privacy statement, so your internal employees and external guests can review your policies. Because privacy statements are uniquely created and tailored for each business, we strongly recommend you contact a lawyer for assistance.
 
    **NOTE** - For information about viewing or deleting personal data, see [https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure). For more information about GDPR, see the [https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted).
 
-You add your organization's privacy information in the **Properties** area of Azure AD. To access the Properties area and add your privacy information:
+You add your organization's privacy information in the **Properties** area of Microsoft Entra ID. To access the Properties area and add your privacy information:
 
 1. In the **Identity** menu, select **Overview**, then select **Properties**.
 

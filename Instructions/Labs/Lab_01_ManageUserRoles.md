@@ -110,13 +110,13 @@ Using Microsoft Entra ID, you can designate limited administrators to manage ide
 
    **Note - This role now has the ability to add applications to the tenant.  We will experiment more with this feature in later labs.**
 
-7. Sign out of the Chris Green instance of the Azure Portal and close the browser.
+7. Sign out of the Chris Green instance of the portal and close the browser.
 
 ### Exercise 3 - Remove a role assignment
 
 #### Task 1 - Remove the application administrator from Chris Green
 
-This task will use an alternative method to remove the assigned role; it will use the **Roles and administrators** option in Azure AD.
+This task will use an alternative method to remove the assigned role; it will use the **Roles and administrators** option in Micrisoft Entra ID.
 
 1. If you are not already logged in as your Global Admin, launch the Microsoft Entra admin center and log in now.
 2. In the search box type **Roles and** then launch Microsoft Entra ID roles and administration.
@@ -185,7 +185,7 @@ After the users have been created, you will be prompted that the creation has su
     ```
     Connect-MgGraph -Scopes "User.ReadWrite.All"
     ``` 
-    The Edge browser will open and you will be prompted to sign-in.  Use the MOD Administrator account to connect.  Accpet the permissions request; then close the browser window.
+    The Edge browser will open and you will be prompted to sign-in.  Use the MOD Administrator account to connect.  Accept the permissions request; then close the browser window.
 
 5. To verify that you are connected and to see existing users, run:  
 
@@ -262,7 +262,7 @@ It may happen that an account is deleted and then needs to be recovered. You nee
 
 #### Task 1 - Find your unlicensed user in Azure Active Directory
 
-Some user accounts in your organization will not be provided all available products in their assigned license or will need updates or additions to their license assignment. You need to ensure you are able to update a user account's license assignment in Azure AD.
+Some user accounts in your organization will not be provided all available products in their assigned license or will need updates or additions to their license assignment. You need to ensure you are able to update a user account's license assignment in Microsoft Entra ID.
 
 1. Browse to [https://entra.microsoft.com]( https://entra.microsoft.com).
 

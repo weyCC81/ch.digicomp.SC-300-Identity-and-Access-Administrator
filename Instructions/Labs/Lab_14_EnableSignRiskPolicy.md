@@ -22,7 +22,7 @@ As an additional layer of security, you need to enable and configure your Micros
 
 2. Open the portal menu and then select **Microsoft Entra ID**.
 
-3. On the lefthand menu, under **Identity**, select **Protection**.
+3. On menu, under **Identity**, select **Protection**.
 
 4. On the Security page, in the left navigation, select **Identity protection**.
 
@@ -48,7 +48,7 @@ As an additional layer of security, you need to enable and configure your Micros
 
 13. Select the **Require password change** check box and then select **Done**.
 
-14. Under **Policy enforcement**, select **On** and then select **Save**.
+14. Under **Policy enforcement**, select **Enable** and then select **Save**.
 
 #### Task 2 - Enable Sign-in risk policy
 
@@ -64,4 +64,4 @@ As an additional layer of security, you need to enable and configure your Micros
 
 6. Select the **Require multi-factor authentication** check box and then select **Done**.
 
-7. Under **Policy enforcement**, select **On** and then select **Save**.
+7. Under **Policy enforcement**, select **Enable** and then select **Save**.
