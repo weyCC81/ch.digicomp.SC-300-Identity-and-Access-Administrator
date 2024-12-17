@@ -7,13 +7,15 @@ lab:
 
 # Lab 13 - Implement and test a conditional access policy
 
+### Login type = Microsoft 365 admin
+
 ## Lab scenario
 
 Your organization needs to be able to limit user access to its internal applications. You must deploy an Microsoft Entra conditional access policy.
 
 **Note** - For Conditional Access Policies, you can turn off Security Defaults, the key points to remember are from the training.  Additional information on Security defaults can be found at this link: <https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/concept-fundamentals-security-defaults>
 
-#### Estimated time: 30 minutes
+#### Estimated time: 20 minutes
 
 ### Exercise 1 - Set a conditional access policy to block DebraB from accessing Sway
 
@@ -24,12 +26,16 @@ Your organization needs to be able to limit user access to its internal applicat
 2. Connect to [https://www.office.com](https://www.office.com) 
 3. When prompted, log in as DebraB:
 
-   | Setting | Value |
-   | :--- | :--- |
-   | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
-   | Password | Enter the admin password of the tenant(Refer the Lab Resources tab to retrieve the tenant's admin password). |
+  | Setting | Value |
+  | :--- | :--- |
+  | Username | **DebraB@** `<<your lab domain>>.onmicrosoft.com` |
+  | Password | Enter the admin password of the tenant(Refer the Lab Resources tab to retrieve the tenant's admin password). |
     
-4. Select on the **Sway** icon to see that it loads correctly.
+4. Bypass the welcome and introduction screens.
+
+5. Open the **Apps** page, then then select on the **Sway** icon to see that it loads correctly.
+
+6. Log out of Office and close your browser session.
 
 #### Task 2 -  Create a conditional access policy
 
@@ -123,6 +129,7 @@ You should test your conditional access policies to ensure they working as expec
 
 This allows you to test the policies and their affectiveness before enabling the policies.
 
+
 ### Exercise 3 - Configure sign in frequency controls using a conditional access policy
 
 #### Task - Use the Microsoft Entra admin center to configure conditional access
@@ -149,9 +156,9 @@ As part of your company's larger security configuration, you must test a conditi
 
 9. In the Select pane, select your **Grady Archie** account and then select **Select**.
 
-10. Select **Cloud apps or actions**.
+10. Select **Target Resources - No target resources selected**.
 
-11. Verify **Cloud apps** is selected and then select **Select apps**.
+11. Within the **Include** make sure **Select resources** is selected, then choose **None** in the Select section.
 
 12. In the Select pane, select **Office 365** and then select **Select**.
 
