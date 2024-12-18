@@ -28,10 +28,12 @@
 
 ## Learning Path 2 - Implement an identity management solution
 
-> Administrative Unit (Delegate Limited Roles) vs Organizational Units (Delegate Permission)
+> Administrative Unit (Delegate Limited Roles) vs Organizational Units (Delegate AD Permission)
 > Application Administrator (+ App Proxy) vs Cloud Application Administrator (No App Proxy)
 
 - Establish emergency (BreakGlass --> No Login): <https://learn.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access>
+  - Logs 1: <https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/tutorial-log-alert>
+  - Logs 2: <https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access>
 
 - Default user permissions (Self-Service vs Managed by Admin): <https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions>
 
@@ -45,7 +47,7 @@ Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed f
 
 Conditional Access vs Default Security vs "per User MFA" (Legacy MFA Portal)
 
-Authentication methods (MFA, Password-less, Strength)
+Authentication methods (MFA, Password-less, Strength)  
 Self-Service Password Reset (SSPR) --> No Security Questions for Admin
 
 - Smart Lockout vs User Lock (Not synced)
@@ -63,12 +65,15 @@ Risk Policy (Risky Event vs Risky User)  {Hint: Risky Guest-User in Guest-Tenant
 
 Azure Roles (Key Vault Options, usw.)
 
+Global Secure Access: <https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access>
+    - Private vs Public
+
 ## Learning Path 4 - Implement Access Management for Apps
 
-MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)
+MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)  
 CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
 
-Enterprise App (SAML) vs Application Registration (OpenID (OIDC))
+Enterprise App (SAML) vs Application Registration (OpenID (OIDC))  
 Gallery (Verification by Microsoft, Template), Mutli-Tenant App, Single-Tenant App
 
 User Consent (Default Allowed, Restriction possible) vs Tenant-Wide Consent (by Admin)
@@ -89,9 +94,13 @@ KQL
 
 Secure Score (wait ~1 day for updates)
 
-Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templaes)
+Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templates)
 
 ## More
+
+### Study guide
+
+[Study guide for Exam SC-300: Microsoft Identity and Access Administrator | Microsoft Learn](https://learn.microsoft.com/credentials/certifications/resources/study-guides/sc-300)
 
 ### Identity Provider (IdP)
 
@@ -133,7 +142,7 @@ Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templaes)
 
 ### Managed Domain vs Federated Domain
 
-Managed Domain = Entra ID (Azure) for Internal User
+Managed Domain = Entra ID (Azure) for Internal User  
 Federated Domain = ADFS for Internal User
 
 ### MFA Registration (Optional)
@@ -156,7 +165,9 @@ Source: <https://msportals.io>
 
 > Plattform: Single-page application, Mobile and desktop applications, iOS/macOS, Android
 
-- Business Applicatio - LastPass
+- Permission overview: <https://graphpermissions.merill.net/permission/>
+
+- Business Application - LastPass
   - EN: <https://support.lastpass.com/s/document-item?language=en_US&sfdcIFrameOrigin=null&bundleId=lastpass&topicId=LastPass%2FFederated_Azure_AD_step3_create_login_app.html&_LANG=dede>
   - DE: <https://support.lastpass.com/s/document-item?language=de&sfdcIFrameOrigin=null&bundleId=lastpass&topicId=LastPass/Federated_Azure_AD_step3_create_login_app.html&_LANG=dede>
 - Business Application - Vertec
