@@ -204,19 +204,19 @@ Source: <https://msportals.io>
 <https://www.linkedin.com/posts/merill_i-todays-blog-post-on-entra-id-licensing-activity-7209407252506558464-xR3z>
 <https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-governance-licensing-clarifications/4164499>
 
-![Licensing](./path1_microsoft-lic-1718856631899.jpg)
-
+<!-- ![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"} -->
+![Licensing](./path1_microsoft-lic-1718856631899.jpg){width=300 }
 
 ### Basic - Microsoft 365 Groups
 
 <https://learn.microsoft.com/en-us/microsoftteams/office-365-groups>
 
-![Groups](./path1_microsoft-365-groups-hub-spoke.png
+![Groups](./path1_microsoft-365-groups-hub-spoke.png)
 
 
 ### Basic - App Registration vs Enterprise Apps
 
-![Multi-Tenant App](./pictures/path1_App-registration-vs-Enterprise-application-explained-3-1024x470.png)
+![Multi-Tenant App](./path1_App-registration-vs-Enterprise-application-explained-3-1024x470.png)
 
 <!-- 
     https://emilyvanputten.com/the-difference-between-azuread-app-registrations-and-enterprise-applications-explained/
@@ -225,4 +225,10 @@ Source: <https://msportals.io>
 
 ### Global Secure Access client
 
-https://learn.microsoft.com/en-us/troubleshoot/entra/global-secure-access/troubleshoot-global-secure-access-client-windows-issues
+<https://learn.microsoft.com/en-us/troubleshoot/entra/global-secure-access/troubleshoot-global-secure-access-client-windows-issues>
+
+Standalone: No
+> A managed device joined to the onboarded tenant. The device must be either *Microsoft Entra joined* or *Microsoft Entra hybrid joined*. Microsoft Entra registered devices aren't supported.
+
+Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control#configure-client-side-registry-setting-for-scp>
+

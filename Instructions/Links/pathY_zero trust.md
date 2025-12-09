@@ -16,6 +16,8 @@ _Windows Hello for Business, Passwordless with Phone Sign-in_
 <!-- <https://microsoft.github.io/ztlabguide/saasapp> -->
 https://microsoft.github.io/cloudlab/saasapp/
 
+<br />
+
 # Zero Trust Workshop (Alternative, More)
 
 <https://microsoft.github.io/zerotrustassessment/docs/intro>
