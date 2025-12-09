@@ -15,13 +15,14 @@ This lab has two different log in options, used to different parts of the lab. O
 
   - Azure Resource based log-in
   - Microsoft 365 + E5 tenant log-in
+      - MOD Administrator account
 
 You will be told which login to use in each of the labs.
 
 
 # Lab 01: Manage user roles
 
-### Login type = Microsoft 365 admin
+### Login type = Microsoft 365 + E5 tenant log-in
 
 ## Lab scenario
 
@@ -36,18 +37,18 @@ Your company recently hired a new employee who will perform duties as an applica
 1. Sign in to the [https://entra.microsoft.com](https://entra.microsoft.com) as a Global administrator.
  - Use the **Microsoft 365 admin** account.
 
-2. In the menu on the left select **Identity**.
+2. In the menu on the left expand the **Entra ID** dropdown, if not already open.
 
 3. In the left navigation menu, under **Users**, select **All Users**, then select **+ New User** and **Create new user**.
 
-4. Mark the **Create user** button. Then, create a user with the following information:
+4. Create a user with the following information:
 
     | **Setting**| **Value**|
     | :--- | :--- |
     | User principal name| ChrisG|
     | Display Name| Chris Green|
 
-5. Mark the **Auto-generate password** option.
+5. Ensure the **Auto-generate password** option is marked.
 
 6. Copy the generated password to a location you can remember it for the next task.
 
@@ -73,11 +74,13 @@ Your company recently hired a new employee who will perform duties as an applica
     | New Password| Enter a unique and secure password |
     | Confirm Password| Reenter a unique and secure password |
 
-4. Search on and select **Enterprise applications** in the search dialog at the top of the screen.
+  **Lab Tip** - it is recommended that you use the User Password provided in the lab environment.
+
+4. Search on and select +++Enterprise applications+++ in the search dialog at the top of the screen.
 
 5. Select on **+ New application**. Notice that **+ Create your own application** is unavailable.
 
-6. Try Selecting on some of the other settings like **Application Proxy**, **User settings**, and others to see that **Chris Green** does not have rights.
+6. Try selecting any of the other settings like **Consent and permissions**, and **User settings** to verify **Chris Green** does not have rights.
 
 7. Select on **ChrisG** name in the upper-right corner and sign out.
 
@@ -88,37 +91,39 @@ Your company recently hired a new employee who will perform duties as an applica
 
 Using Microsoft Entra ID, you can designate limited administrators to manage identity tasks in less-privileged roles. Administrators can be assigned for such purposes as adding or changing users, assigning administrative roles, resetting user passwords, managing user licenses, and managing domain names.
 
-1. If you are not already logged in as a Global Administrator role, open the Microsoft Entra admin center and log in.
+1. If you are not already logged in as an Administrator role, open the Microsoft Entra admin center and log in.
 2. Navigate to Identity and then select Users page.
 3. Select on **All users** under the Manage section of the menu.
 4. Select on **Chris Green** account.
 5. Choose **Assigned roles** from the Manage menu.
-6. Select **+ Add assignments** and mark the `Application administrator` role.
-7. Select **Add**
+6. Select **+ Add assignments**.
+7. Select `Application administrator` role in the dropdown.
+8. Select the **Next** button.
+9. Mark the **Active** value for **Assignment Type**.
+10. Enter as justification like +++Needed for lab+++. Then select **Assign**
 
     ![Assigned roles page - showing the selected role](./media/directory-role-select-role.png)
 
 **Note** - If the lab environment has already activated Microsoft Entra ID Premium P2, Privileged Identity Management (PIM) will be enabled and you wll need to select **Next** and assign a Permanent role to this user.
 
-9.Select the **Refesh** button.
+11. Select the **Refesh** button.
 
 **Note - The newly assigned Application administrator role appears on the user’s Assigned roles page.**
 
 #### Task 2 - Check application permissions
 
 1. Launch a new InPrivate browser window.
-2. Open the Microsoft Entra admin center [https://entra.microsoftcom](https://entra.microsoft.com) as Chris Green.
+2. Open the Microsoft Entra admin center at +++https://entra.microsoftcom+++ as Chris Green.
 
     | **Setting**| **Value**|
     | :--- | :--- |
     | User name| ChrisG@`your domain name.com`|
     | Password| Enter the unique and secure password you created earlier |
 
-3. If you see a **Welcome to Microsoft Azure** tour dialog, Select the **Maybe Later** button.
-4. Search on and select **Enterprise applications** in the search dialog at the top of the screen.
-5. Notice that **+ New Application** is available now.
-6. Select **+ New Application**
-7. View the **"**+ Create your own application** is not grayed out.  If you pick a gallery app, you will see the **Create** button is available.
+3. Search on and select +++Enterprise applications+++ in the search dialog at the top of the screen.
+4. Notice that **+ New Application** is available now.
+5. Select **+ New Application**
+6. View the **+ Create your own application** is no longer grayed out.  If you pick a gallery app, you will see the **Create** button is available.
 
    **Note - This role now has the ability to add applications to the tenant.  We will experiment more with this feature in later labs.**
 
@@ -130,8 +135,8 @@ Using Microsoft Entra ID, you can designate limited administrators to manage ide
 
 This task will use an alternative method to remove the assigned role; it will use the **Roles and administrators** option in Micrisoft Entra ID.
 
-1. If you are not already logged in as your Global Admin, launch the Microsoft Entra admin center and log in now.
-2. In the search box type **Roles** and then launch Microsoft Entra ID roles and administration.
+1. If you are not already logged in as an Admin, launch the Microsoft Entra admin center and log in now.
+2. In the search box type **Roles** and then launch **Microsoft Entra ID roles and administration**.
 3. In **All roles** of **Roles and administrators**, select the **Application administrator** role from the list.
 4. On the **Application administrator | Assignments** page you should see Chris Green's name listed.
 5. Scroll all the way to the right on Chris Green.
@@ -157,7 +162,7 @@ This task will use an alternative method to remove the assigned role; it will us
 
     You can modify this file to add users in bulk.  Note that you do not need to fill out all the field.  As per the sample data provide, you mainly need to add the name and username information.
 
-6. A sample CSV has been provided in the Allfiles/Lab1 folder -- **SC300BulkUser.csv**.
+6. A sample CSV has been provided in the Allfiles/Labs/Lab1 folder -- **SC300BulkUser.csv**.
    1. Open Notepad.
      - Inside the lab environment, select the START button and type Notepad.  
    1. Open the SC300BulkUser.csv file
@@ -166,7 +171,7 @@ This task will use an alternative method to remove the assigned role; it will us
 
 7. On the **Bulk create users** dialog, select the file folder icon on step 3.
 
-8. Path to the Allfiles/Lab1 folder and select **SC300BulkUser.csv** file.
+8. Path to the Allfiles/Labs/Lab1 folder and select **SC300BulkUser.csv** file.
 
 9. Select **Open**.
 
@@ -176,14 +181,16 @@ After the users have been created, you will be prompted that the creation has su
 
 #### Task 2 - Bulk addition of users using PowerShell
 
-1. Open PowerShell as an administrator.  This can be done by searching for PowerShell in Windows and choosing Run as administrator. 
+1. Open PowerShell.  This can be done by searching for PowerShell in Windows. 
 
 **Note** - You need to have PowerShell version 7.2 or higher for this lab to function.  When PowerShell opens you will get a version at the top of the screen, if you are running and older version, follow the instructions on the screen to go to https://aka.ms/PowerShell-Release?tag=7.3.9. Scroll down to the assets section and select powershell-7.3.1-win-x64.msi. When the download has completed, select Open file. Install using all the defaults.
+
+**Lab Tip** - TouchType does not work with PowerShell well in the lab environment.  To work around this issue, you open Notepad in you lab environment. Next use the TouchType feature to place the script into Notepad, then finally use Copy & Paste to put the command into PowerShell.  Apologies for this extra step.
 
 2. You will need to Install the Microsoft.Graph PowerShell module if you have not used it before.  Run the following two commands and when prompted to confirm press Y:
 
     ```
-    Install-Module Microsoft.Graph
+    Install-Module Microsoft.Graph -Scope CurrentUser -Verbose
     ```
 3. Confirm the Microsoft.Graph module is installed:
 
@@ -192,7 +199,7 @@ After the users have been created, you will be prompted that the creation has su
     ```
     
 
-4. Next, you will need to login to Azure by running:  
+4. Next, you will need to login to Microsoft Graph API by running:  
 
     ```
     Connect-MgGraph -Scopes "User.ReadWrite.All"
@@ -205,7 +212,7 @@ After the users have been created, you will be prompted that the creation has su
     Get-MgUser 
     ```
     
-7. To assign a common temporary password to all new users, run the following command and replace the <Enter a complex Password> with the password that you would like to provide to your users.  
+6. To assign a common temporary password to all new users, run the following command and replace the <Enter a complex Password> with the password that you would like to provide to your users.  
 
     ``` 
     $PWProfile = @{
@@ -214,7 +221,7 @@ After the users have been created, you will be prompted that the creation has su
     }
     ```
 
-8. You are ready to create a new users.  The following command will be populated with the user information and run.  If you have more than one user to add, you can use a notepad txt file to add the user information and copy/paste into PowerShell. 
+7. You are ready to create a new users.  The following command will be populated with the user information and run.  If you have more than one user to add, you can use a notepad txt file to add the user information and copy/paste into PowerShell. 
 
     ```
     New-MgUser `
@@ -239,7 +246,7 @@ You can add and remove users with the Microsoft Entra ID page.  However, users c
 
 It may happen that an account is deleted and then needs to be recovered. You need to verify you can recover an account that has been deleted recently.
 
-1. Browse to [https://entra.micrososft.com](Microsoft Entra admin center).
+1. Browse to [https://entra.microsoft.com](Microsoft Entra admin center).
 
 2. In the left navigation, under **Identity**, select **Users**.
 
@@ -298,7 +305,7 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
 
 1. Open a new tab in your browser.
 
-2. Connect to the Microsoft 365 admin center at http://admin.microsoft.com.
+2. Connect to the Microsoft 365 admin center at +++https://admin.microsoft.com+++.
 
 3. Log in as your administrator account if prompted.
 
@@ -306,7 +313,7 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
 
 5. Select **Windows 10/11 Enterprise E3** license from the list.
 
-6. Choose the **+ Add license** item.
+6. Choose the **+ Assign licenses** item.
 
 7. Search for **Raul Razo** in the list.
 

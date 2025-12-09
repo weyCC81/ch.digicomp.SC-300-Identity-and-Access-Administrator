@@ -7,7 +7,7 @@ lab:
 
 # Lab 03: Assigning licenses using group membership
 
-### Login type = Microsoft 365 admin
+### Login type = Microsoft 365 + E5 tenant log-in
 
 ## Lab scenario
 
@@ -23,10 +23,10 @@ Your organization has decided to use security groups in Microsoft Entra ID to ma
 2. Connect to [https://www.office.com](https://www.office.com).
 3. Select Sign in and connect as Delia Dennis.
 
-   | **Setting**| **Value**|
+   | **Setting** | **Value** |
    | :--- | :--- |
-   | Username | DeliaD@`your domain name.com`|
-   | Password| Enter the password of the Global Admin from the Resources|
+   | Username | DeliaD@`your domain name.com` |
+   | Password| Enter the User password provided for DeliaD |
 
 4. You should connect to the Office.com website, but see a message indicating you don't have a license.
 
@@ -60,7 +60,7 @@ Your organization has decided to use security groups in Microsoft Entra ID to ma
 
 #### Task 3 - Add an Office license to sg-SC300-O365
 
-You have to add and remove licenses via the Microsoft 365 admin center. This is a relatively new change.
+**Lab Tip** - You have to add and remove licenses via the Microsoft 365 admin center. This is a relatively new change.
 
 1. Open a new tab in your browser.
 
@@ -74,11 +74,11 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
 
 6. Select the **Groups** tab on the licensing screen.
 
-7. Choose the **+ Add license** item.
+7. Choose the **+ Assign licenses** item.
 
 8. Search for **sg-SC300-O365** group the select it from the list.
 
-8. Once you have added Raul, select **Assign**.
+8. Once you have added the group, select **Assign**.
  
 9. Close the confirmation message.
 
@@ -86,7 +86,7 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
 
 11. Navigate back to the **All groups** in the left navigation, under **Identity**, select **Groups**
 
-12. In the Users page, select **sg-SC300-O365**.
+12. In the Groups page, select **sg-SC300-O365**.
 
 13. In the left navigation, select **Licenses**.
 
@@ -94,7 +94,7 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
 
 15. You can exit out of the license screen.
 
-#### Taks 4 - Confirm the Office 365 license
+#### Task 4 - Confirm the Office 365 license
 
 1. Launch a new InPrivate browser window.
 2. Connect to [https://www.office.com](https://www.office.com).
@@ -103,7 +103,7 @@ You have to add and remove licenses via the Microsoft 365 admin center. This is 
    | **Setting**| **Value**|
    | :--- | :--- |
    | Username | DeliaD@`your domain name.com`|
-   | Password| Enter the password of the Global Admin from the Resources|
+   | Password| Enter the password of the provided password  |
 
 4. You should connect to the Office.com website, and see no messages regarding license. All of the Office applications are available on the left.
 
@@ -143,7 +143,7 @@ Part of your duties as an Microsoft Entra administrator is to create different t
 
 As your company grows, manually group management is too time consuming. Since standardizing the directory, you can now take advantage of dynamic groups. You must create a new dynamic group to ensure you're ready for dynamic group creation in production.
 
-1. Sign in to the [https://entra.microsoft.com](https://entra.microsoft.com) with an account that is assigned the Global administrator or User administrator role in the tenant.
+1. Sign in to the [https://entra.microsoft.com](https://entra.microsoft.com) with an provided administrator account. You need at least User Administrator role in the tenant.
 
 2. Select **Identity**.
 
@@ -164,10 +164,10 @@ As your company grows, manually group management is too time consuming. Since st
 9. In the Edit rule syntax pane, enter the following expression in the **Rule syntax** box:
 
    ```powershell
-   user.objectid -ne null
+   user.objectId -ne null
    ```
 
-   **Warning** - the `user.objectid` is case sensitive.
+   **Warning** - the `user.objectId` is case sensitive.
 
 10. Select **OK**. The rule appears in the Rule syntax box.
 
@@ -194,8 +194,10 @@ As your company grows, manually group management is too time consuming. Since st
 
 1. Try making a group with only **Guest** users:
 
-   - (user.objectid -ne null) and (user.userType -eq "Guest")
+   - (user.objectId -ne null) and (user.userType -eq "Guest")
 
 2. Try make a group with only **Members** of the Microsoft Entra users.
 
-   - (user.objectid -ne null) and (user.userType -eq "Member")
+   - (user.objectId -ne null) and (user.userType -eq "Member")
+
+**Lab Tip** - If you get a Failed to Create Group message mentioning an Invalid Operator, confirm the spelling of the operator.  Note I in objectId and the T in userType are capital letters.
