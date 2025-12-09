@@ -197,3 +197,32 @@ Source: <https://msportals.io>
 > Copy Tenant Settings, Tenant Configuration Drift
 
 <https://microsoft365dsc.com/>
+
+
+### Entra ID licensing (One Person = One License)
+
+<https://www.linkedin.com/posts/merill_i-todays-blog-post-on-entra-id-licensing-activity-7209407252506558464-xR3z>
+<https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-governance-licensing-clarifications/4164499>
+
+![Licensing](./path1_microsoft-lic-1718856631899.jpg)
+
+
+### Basic - Microsoft 365 Groups
+
+<https://learn.microsoft.com/en-us/microsoftteams/office-365-groups>
+
+![Groups](./path1_microsoft-365-groups-hub-spoke.png
+
+
+### Basic - App Registration vs Enterprise Apps
+
+![Multi-Tenant App](./pictures/path1_App-registration-vs-Enterprise-application-explained-3-1024x470.png)
+
+<!-- 
+    https://emilyvanputten.com/the-difference-between-azuread-app-registrations-and-enterprise-applications-explained/
+-->
+
+
+### Global Secure Access client
+
+https://learn.microsoft.com/en-us/troubleshoot/entra/global-secure-access/troubleshoot-global-secure-access-client-windows-issues

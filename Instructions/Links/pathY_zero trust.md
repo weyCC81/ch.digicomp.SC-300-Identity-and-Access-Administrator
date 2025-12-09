@@ -1,14 +1,22 @@
 
-# Passwordless
+# Zero Trust Lab Guide
 
-## Passwordless with Phone Sign-in
+Overview: <https://microsoft.github.io/cloudlab/>
 
-## Bootstrapping Windows Hello for Business using Temporary Access Pass
 
-<https://microsoft.github.io/ztlabguide/pswdlesswhfb>
+## Passwordless - Bootstrapping Windows Hello for Business using Temporary Access Pass
+_Windows Hello for Business, Passwordless with Phone Sign-in_
 
-# Applications
+<!-- <https://microsoft.github.io/ztlabguide/pswdlesswhfb> -->
+<https://microsoft.github.io/cloudlab/pswdlesswhfb/>
 
-## SaaS App Integration for Single Sign-on
 
-<https://microsoft.github.io/ztlabguide/saasapp>
+## Applications - SaaS App Integration for Single Sign-on
+
+<!-- <https://microsoft.github.io/ztlabguide/saasapp> -->
+https://microsoft.github.io/cloudlab/saasapp/
+
+# Zero Trust Workshop (Alternative, More)
+
+<https://microsoft.github.io/zerotrustassessment/docs/intro>
+
