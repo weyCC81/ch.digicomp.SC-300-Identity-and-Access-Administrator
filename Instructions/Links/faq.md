@@ -204,8 +204,9 @@ Source: <https://msportals.io>
 <https://www.linkedin.com/posts/merill_i-todays-blog-post-on-entra-id-licensing-activity-7209407252506558464-xR3z>
 <https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-governance-licensing-clarifications/4164499>
 
-<!-- ![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"} -->
-![Licensing](./path1_microsoft-lic-1718856631899.jpg){width=300 }
+![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"} -->
+<!-- ![Licensing](./path1_microsoft-lic-1718856631899.jpg){ width=300 } -->
+<!-- { width=800 loading=lazy }>
 
 ### Basic - Microsoft 365 Groups
 
@@ -232,3 +233,5 @@ Standalone: No
 
 Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control#configure-client-side-registry-setting-for-scp>
 
+
+![alt text](image.png)
