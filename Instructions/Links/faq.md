@@ -65,32 +65,28 @@
 
 - Azure roles (Key Vault options, etc.)
 
-Global Secure Access: <https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access>
-    - Private vs Public
+- Global Secure Access: <https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access>
+  - Private vs Public
 
 ## Learning Path 4 - Implement Access Management for Apps
 
-MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)  
-CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
-
-Enterprise App (SAML) vs Application Registration (OpenID (OIDC))  
-Gallery (Verification by Microsoft, Template), Multi-Tenant App, Single-Tenant App
-
-User Consent (Default Allowed, Restriction possible) vs Tenant-Wide Consent (by Admin)
-
-Example App: LastPass, Vertec, usw.
-
-Graph API over PowerShell vs Graph Explorer (REST API, JSON)
+- MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)
+- CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
+- Enterprise App (SAML) vs Application Registration (OpenID (OIDC))
+- Gallery (Verification by Microsoft, Template), Multi-Tenant App, Single-Tenant App
+- User consent (Default allowed, restriction possible) vs tenant-wide consent (by admin)
+- Example app: LastPass, Vertec, usw.
+- Graph API over PowerShell vs Graph Explorer (REST API, JSON)
 
 ## Learning Path 5 - Plan and Implement an Identity Governance Strategy
 
 - Lifecycle (Join, Leaver), Terms of use (ToS), Access review
 
-PIM
-> In the context of Entra ID (Azure AD), Privileged Identity Management (PIM) refers to a feature that helps organizations manage, control, and monitor access to privileged roles within Azure AD and other Microsoft cloud services
+- PIM
+  > In the context of Entra ID (Azure AD), Privileged Identity Management (PIM) refers to a feature that helps organizations manage, control, and monitor access to privileged roles within Azure AD and other Microsoft cloud services
 
-KQL
-> KQL typically stands for "Kusto Query Language." Kusto is a query language used in Azure Data Explorer, Azure Monitor, and Azure Sentinel, among other Microsoft services. It's designed for querying large datasets quickly and efficiently. KQL is similar to SQL (Structured Query Language) but tailored specifically for these Azure services. It's commonly used for analyzing and querying data in cloud environments, especially for monitoring, logging, and analytics purposes.
+- KQL
+  > KQL typically stands for "Kusto Query Language." Kusto is a query language used in Azure Data Explorer, Azure Monitor, and Azure Sentinel, among other Microsoft services. It's designed for querying large datasets quickly and efficiently. KQL is similar to SQL (Structured Query Language) but tailored specifically for these Azure services. It's commonly used for analyzing and querying data in cloud environments, especially for monitoring, logging, and analytics purposes.
 
 - Secure Score (wait ~1 day for updates)
 
@@ -206,7 +202,7 @@ Source: <https://msportals.io>
 
 ![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"}
 <!-- ![Licensing](./path1_microsoft-lic-1718856631899.jpg){ width=300 } -->
-<!-- { width=800 loading=lazy }>
+<!-- { width=800 loading=lazy } -->
 
 ### Basic - Microsoft 365 Groups
 
@@ -233,10 +229,17 @@ Standalone: No
 
 Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control#configure-client-side-registry-setting-for-scp>
 
+## Login with Microsoft Entra ID
+
+- Username format (RDP): `AzureAD\\admin@[contoso].onmicrosoft.com`
+- RDP file property: `username:s:AzureAD\\admin@[contoso].onmicrosoft.com`
+
 ![alt text](pathX_image.png)
 
 
-### Authentication strengths &  dependencies
+
+
+### Authentication strengths & dependencies
 
 <https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths>
 
@@ -248,4 +251,27 @@ Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com
 ![alt text](path3_updated-admin-resilience-credentials.png)
 
 
+### App Registration (Application) vs Enterprise App (Service Principal)
+
+| Feature / Topic | App Registration (Application) | Enterprise App (Service Principal) |
+|---|---|---|
+| Core role | Developer object for app identity and configuration | Tenant-local instance used for access and operations |
+| Portal blade | App registrations | Enterprise applications |
+| Scope | Home tenant app definition | Per-tenant service principal (home tenant and/or guest tenant) |
+| Created alone (without app registration) | No | Yes (for Gallery/non-Gallery SAML, App Proxy, some service principals) |
+| Primary audience | Developers | IAM/Admin operations |
+| Multi-tenant app | Configure supported account types | Created in each tenant after consent (including guest tenant) |
+| OAuth/OIDC redirect URIs | Yes | No |
+| API permissions (declared) | Yes | No |
+| Secrets/certificates for app auth | Yes | No |
+| Consent state (effective in tenant) | No | Yes |
+| User/group assignment | No | Yes |
+| Conditional Access targeting | No | Yes |
+| SAML SSO settings | No | Yes |
+| SCIM provisioning | No | Yes |
+| App Proxy publishing | No | Yes |
+| Global Secure Access (GSA) app access policies | No | Yes |
+| Protocol focus | OAuth 2.0/OIDC  | SAML-based enterprise SSO and tenant access controls |
+| Typical data format in auth flow | JSON (JWT tokens) | XML (SAML assertions) |
+| Useful tools | JWT: <https://jwt.io/> | SAML: <https://www.samltool.io/> / <https://developer.pingidentity.com/en/tools/saml-decoder.html> |
 
