@@ -15,12 +15,12 @@
 > Just-in-time (JIT)
 
 - Identity and access management (IAM)
-  - B2B collaboration: Guest-Users (Copy)
-  - B2B direct connect : External User (No Copy)
+  - B2B collaboration: Guest users (Copy)
+  - B2B direct connect: External user (No copy)
 
-- Microsoft Entra Domain Services (Azure Active Directory Domain Services) = Limited AD in the Cloud (Kerberos, LDAP, NTLM)
-- Microsoft Entra ID = Cloud IDP (REST API, JSON)
-- Active Directory Domain Services = AD On-Prem (Kerberos, LDAP, NTLM)
+- Microsoft Entra Domain Services (Azure Active Directory Domain Services) = Limited AD in the cloud (Kerberos, LDAP, NTLM)
+- Microsoft Entra ID = Cloud IdP (REST API, JSON)
+- Active Directory Domain Services = AD on-prem (Kerberos, LDAP, NTLM)
 
 > JSON Web Token (JWT) = Can be decoded (<https://jwt.io/>)
 
@@ -31,39 +31,39 @@
 > Administrative Unit (Delegate Limited Roles) vs Organizational Units (Delegate AD Permission)
 > Application Administrator (+ App Proxy) vs Cloud Application Administrator (No App Proxy)
 
-- Establish emergency (BreakGlass --> No Login): <https://learn.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access>
+- Establish emergency access (BreakGlass -> No login): <https://learn.microsoft.com/en-us/azure/active-directory/roles/security-emergency-access>
   - Logs 1: <https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/tutorial-log-alert>
   - Logs 2: <https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access>
 
 - Default user permissions (Self-Service vs Managed by Admin): <https://learn.microsoft.com/en-us/entra/fundamentals/users-default-permissions>
 
-Custom security (Cloud, Entra private) vs Extension attribute (Cloud, Entra public) vs Custom attribute (on-prem, exchange)
+- Custom security (Cloud, Entra private) vs extension attribute (Cloud, Entra public) vs custom attribute (on-prem, Exchange)
 
-User Type: Member vs Guest (convert to Member = More Access)
+- User type: Member vs Guest (convert to Member = more access)
 
-Seamless single sign-on (SSO) = Primarily for Entra Hybrid Devices (not needed for Entra joined devices), Hard to Validate with Edge Browser (Cached Credentials)
+- Seamless single sign-on (SSO) = Primarily for Entra hybrid devices (not needed for Entra joined devices), hard to validate with Edge browser (cached credentials)
 
 ## Learning Path 3 - Implement an Authentication and Access Management solution
 
-Conditional Access vs Default Security vs "per User MFA" (Legacy MFA Portal)
+- Conditional Access vs Default Security vs "per-user MFA" (legacy MFA portal)
 
-Authentication methods (MFA, Password-less, Strength)  
-Self-Service Password Reset (SSPR) --> No Security Questions for Admin
+- Authentication methods (MFA, passwordless, strength)
+- Self-Service Password Reset (SSPR) -> No security questions for admins
 
 - Smart Lockout vs User Lock (Not synced)
   - Verhalten mit PTA und ADFS (User Lock impact) vs PHS (User Lock no impact)
     - ADFS (External Lock [WAP], AD Lock = External locks must be higher)
     - PTA (Smart Lock + AD Lock = Smart locks must be higher)
     - PHS (just Smart Lock)
-  - Smart Lockout to Locations (IP-Ranges) instead of whole User Account
+  - Smart Lockout to locations (IP ranges) instead of whole user account
 
-Login with Microsoft Entra ID (+ System assigned managed identity in Azure)
+- Login with Microsoft Entra ID (+ system-assigned managed identity in Azure)
 
-Conditional Access (Exclude vs Include, Frequency, Debugging)
+- Conditional Access (exclude vs include, frequency, debugging)
 
-Risk Policy (Risky Event vs Risky User)  {Hint: Risky Guest-User in Guest-Tenant}
+- Risk policy (risky event vs risky user) {Hint: risky guest user in guest tenant}
 
-Azure Roles (Key Vault Options, usw.)
+- Azure roles (Key Vault options, etc.)
 
 Global Secure Access: <https://learn.microsoft.com/en-us/entra/global-secure-access/overview-what-is-global-secure-access>
     - Private vs Public
@@ -74,7 +74,7 @@ MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Secu
 CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
 
 Enterprise App (SAML) vs Application Registration (OpenID (OIDC))  
-Gallery (Verification by Microsoft, Template), Mutli-Tenant App, Single-Tenant App
+Gallery (Verification by Microsoft, Template), Multi-Tenant App, Single-Tenant App
 
 User Consent (Default Allowed, Restriction possible) vs Tenant-Wide Consent (by Admin)
 
@@ -84,7 +84,7 @@ Graph API over PowerShell vs Graph Explorer (REST API, JSON)
 
 ## Learning Path 5 - Plan and Implement an Identity Governance Strategy
 
-LifeCycle (Join, Leaver), Terms of use (ToS), Access Review
+- Lifecycle (Join, Leaver), Terms of use (ToS), Access review
 
 PIM
 > In the context of Entra ID (Azure AD), Privileged Identity Management (PIM) refers to a feature that helps organizations manage, control, and monitor access to privileged roles within Azure AD and other Microsoft cloud services
@@ -92,9 +92,9 @@ PIM
 KQL
 > KQL typically stands for "Kusto Query Language." Kusto is a query language used in Azure Data Explorer, Azure Monitor, and Azure Sentinel, among other Microsoft services. It's designed for querying large datasets quickly and efficiently. KQL is similar to SQL (Structured Query Language) but tailored specifically for these Azure services. It's commonly used for analyzing and querying data in cloud environments, especially for monitoring, logging, and analytics purposes.
 
-Secure Score (wait ~1 day for updates)
+- Secure Score (wait ~1 day for updates)
 
-Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templates)
+- Sign-in logs analysis (Workbooks, export, Sentinel, KQL examples/templates)
 
 ## More
 
@@ -142,8 +142,8 @@ Sign-In Logs Analyse (Workbooks, Export, Sentinel, KQL Examples/Templates)
 
 ### Managed Domain vs Federated Domain
 
-Managed Domain = Entra ID (Azure) for Internal User  
-Federated Domain = ADFS for Internal User
+- Managed domain = Entra ID (Azure) for internal users
+- Federated domain = ADFS for internal users
 
 ### MFA Registration (Optional)
 
@@ -163,7 +163,7 @@ Source: <https://msportals.io>
 
 ### App Registration Example
 
-> Plattform: Single-page application, Mobile and desktop applications, iOS/macOS, Android
+> Platform: Single-page application, mobile and desktop applications, iOS/macOS, Android
 
 - Permission overview: <https://graphpermissions.merill.net/permission/>
 
@@ -204,7 +204,7 @@ Source: <https://msportals.io>
 <https://www.linkedin.com/posts/merill_i-todays-blog-post-on-entra-id-licensing-activity-7209407252506558464-xR3z>
 <https://techcommunity.microsoft.com/blog/microsoft-entra-blog/microsoft-entra-id-governance-licensing-clarifications/4164499>
 
-![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"} -->
+![Licensing](./path1_microsoft-lic-1718856631899.jpg){: width="300px"}
 <!-- ![Licensing](./path1_microsoft-lic-1718856631899.jpg){ width=300 } -->
 <!-- { width=800 loading=lazy }>
 
@@ -233,5 +233,19 @@ Standalone: No
 
 Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control#configure-client-side-registry-setting-for-scp>
 
+![alt text](pathX_image.png)
 
-![alt text](image.png)
+
+### Authentication strengths &  dependencies
+
+<https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-strengths>
+
+![alt text](path3_auth-methods-comparison_2026-05.png)
+
+<https://learn.microsoft.com/en-us/entra/architecture/resilience-in-credentials>
+
+![alt text](path3_passwordless-pr.png)
+![alt text](path3_updated-admin-resilience-credentials.png)
+
+
+
