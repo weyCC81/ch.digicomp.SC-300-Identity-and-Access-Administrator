@@ -1,8 +1,16 @@
 ---
 lab:
-    title: '10 - Microsoft Entra ID Authentication for Windows and Linux Virtual Machines'
-    learning path: '02'
-    module: 'Module 02 - Implement an Authentication and Access Management Solution'
+  title: 10 - Microsoft Entra ID Authentication for Windows and Linux Virtual Machines
+  learning path: '02'
+  module: Module 02 - Implement an Authentication and Access Management Solution
+  description: The company has decided that Microsoft Entra ID should be used to login to virtual machines for remote access.  This lab will show how this can be setup for Windows and Linux virtual machines.
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Microsoft Entra
+    - Microsoft Entra ID
+    - Windows
 ---
 
 # Lab 10 - Microsoft Entra Authentication for Windows and Linux Virtual Machines
@@ -34,12 +42,13 @@ The company has decided that Microsoft Entra ID should be used to login to virtu
   | Field | Value to use |
   | :-- | :-- |
   | Subscription | Accept the defualt |
-  | Resource Group | Create New - rgEntraLogin |
+  | Resource Group | Create New - rgEL |
   | Virtual machine name | vmEntraLogin |
   | Region | *default* |
   | Availability options | No infrastructure redundancy required |
   | Security Type | Standard |
   | Size | Standard DC1s_v3 - 1 vcpu, 8 GiB memory |
+  | | **Lab tip** - if the exact specified size is not available, try a similar size in the same series.|
   | Admin Username | vmEntraAdmin |
   | Admin Password | Use the one provided by the lab environment or make us a secure password you can remember |
   | Licensing | Confirm you have a license |
@@ -122,7 +131,7 @@ The company has decided that Microsoft Entra ID should be used to login to virtu
 
 #### Task 5 - Connect to the Windows virtual machine using Microsoft Entra ID login
 
-1. Open the **<<virtual machine name>>-EntraID.RDP
+1. Open the **<<virtual machine name>>-EntraID.RDP**
 
 1. Select **Connect** when the dialog opens.
 

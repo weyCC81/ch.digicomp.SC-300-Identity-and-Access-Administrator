@@ -1,8 +1,15 @@
 ---
 lab:
-    title: '16 - Using Azure Key Vault for Managed Identities'
-    learning path: '02'
-    module: 'Module 02 - Implement an Authentication and Access Management Solution'
+  title: 16 - Using Azure Key Vault for Managed Identities
+  learning path: '02'
+  module: Module 02 - Implement an Authentication and Access Management Solution
+  description: Create and configure and Azure Key Vault.  Then use it to store secrets, passwords, and key for use by applications and resources running in your cloud environment.
+  duration: 35 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure Key Vault
+    - Microsoft Entra
 ---
 
 # Lab 16 - Using Azure Key Vault for Managed Identities
@@ -45,7 +52,7 @@ When you use managed identities for Azure resources, your code can get access to
 
 1. Type **Windows 11** in Search the Marketplace search bar.
 
-1. Select **Windows 11** and from the plan dropdown choose **Windows 11 Enterprise, version 22H2**. Then choose **Create**.
+1. Select **Windows 11** and from the plan dropdown choose **Windows 11 Enterprise, version 25H2** or any newer version. Then choose **Create**.
 
   | Field | Values |
   | :--   | :--    |
