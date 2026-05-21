@@ -175,8 +175,8 @@ Source: <https://msportals.io>
 
 ### Emergency Admin, Break-glass account
 
-> Emergency access accounts are limited to emergency or “break glass” scenarios where normal administrative accounts can’t be used.
-> Implement strict security controls—always
+> Emergency access accounts are limited to emergency or "break glass" scenarios where normal administrative accounts can’t be used.
+> Implement strict security controls (always)
 > Validate break-glass accounts
 
 <https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/security-emergency-access>
@@ -274,4 +274,26 @@ Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com
 | Protocol focus | OAuth 2.0/OIDC  | SAML-based enterprise SSO and tenant access controls |
 | Typical data format in auth flow | JSON (JWT tokens) | XML (SAML assertions) |
 | Useful tools | JWT: <https://jwt.io/> | SAML: <https://www.samltool.io/> / <https://developer.pingidentity.com/en/tools/saml-decoder.html> |
+
+
+### User-Assigned vs System-Assigned Managed Identities (Azure)
+
+<https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/managed-identity-best-practice-recommendations>
+<https://medium.com/@venky89.ai/when-to-use-system-assigned-managed-identity-and-user-assigned-managed-identity-3dc6088c83e7>
+(<https://medium.com/codex/leveraging-system-assigned-identity-in-azure-and-assigning-resources-to-an-entra-group-4734641a39f1>)
+
+#### Core Difference
+
+| Property | System-Assigned (SAMI) | User-Assigned (UAMI) |
+|---|---|---|
+|  Lifecycle  | Tied to the resource (deleted when the resource is deleted) | Independent (exists until manually deleted) |
+|  Sharing / Scalability  | One identity per resource only | One identity can be shared across multiple resources (e.g. 4 VMs → 2 role assignments instead of 8) |
+|  Custom Naming  | Auto-generated, not customizable | Named by you at creation time |
+|  Creation  | Auto-created alongside the resource | Created separately as a standalone Azure resource, then attached |
+|  Assignment to other resources  | Bound to a single resource; cannot be reassigned | Can be assigned to any number of resources across types |
+|  Pre-deployment access  | Not available before the resource exists | Can be configured with role assignments before any resource is deployed |
+|  Compliance / Approval overhead  | New identity created per resource (more approvals required) | Single identity reused across resources ( fewer approvals) |
+|  Audit logging  | Logs identify the specific resource that acted | Logs show the shared identity, not the individual resource |
+|  Permission cleanup  | Automatic on resource deletion | Must be manually deleted; role assignments must be cleaned up separately |
+|  Rate limit risk (rapid deployments)  | Risk of hitting Entra ID object creation limits (HTTP 429) | One Service Principal regardless of how many resources use it |
 
