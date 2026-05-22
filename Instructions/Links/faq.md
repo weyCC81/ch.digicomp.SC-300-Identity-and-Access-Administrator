@@ -2,6 +2,8 @@
 
 ## Learning Path 1 - Explore identity and Microsoft
 
+Use this section to build the foundation: identity concepts, modern Zero Trust principles, and the differences between core directory services.
+
 > Authentication (AuthN) confirms who you are, while Authorization (AuthZ) decides what you're allowed to do. So, AuthN checks your identity, and AuthZ grants permissions based on that identity.
 
 - Classic identity (Restrict everything to a secure network)
@@ -28,6 +30,8 @@
 
 ## Learning Path 2 - Implement an identity management solution
 
+Focus here on identity governance basics in operations: delegation models, emergency access, user defaults, and hybrid sign-in behavior.
+
 > Administrative Unit (Delegate Limited Roles) vs Organizational Units (Delegate AD Permission)
 > Application Administrator (+ App Proxy) vs Cloud Application Administrator (No App Proxy)
 
@@ -44,6 +48,8 @@
 - Seamless single sign-on (SSO) = Primarily for Entra hybrid devices (not needed for Entra joined devices), hard to validate with Edge browser (cached credentials)
 
 ## Learning Path 3 - Implement an Authentication and Access Management solution
+
+This section covers authentication controls in practice, including MFA strategy, Conditional Access tuning, lockout behavior, and risk-based policies.
 
 - Conditional Access vs Default Security vs "per-user MFA" (legacy MFA portal)
 
@@ -70,6 +76,8 @@
 
 ## Learning Path 4 - Implement Access Management for Apps
 
+Use this part to distinguish app integration models and consent flows, and to decide when to use Enterprise Apps versus App Registrations.
+
 - MDCA = Microsoft Defender for Cloud Apps (zuvor: MCAS = Microsoft Cloud App Security)
 - CASB = Cloud access security broker (<https://www.microsoft.com/de-ch/security/business/security-101/what-is-a-cloud-access-security-broker-casb>)
 - Enterprise App (SAML) vs Application Registration (OpenID (OIDC))
@@ -79,6 +87,8 @@
 - Graph API over PowerShell vs Graph Explorer (REST API, JSON)
 
 ## Learning Path 5 - Plan and Implement an Identity Governance Strategy
+
+Treat this section as your governance toolkit: lifecycle processes, PIM, KQL-driven analysis, and measurable security posture tracking.
 
 - Lifecycle (Join, Leaver), Terms of use (ToS), Access review
 
@@ -93,6 +103,8 @@
 - Sign-in logs analysis (Workbooks, export, Sentinel, KQL examples/templates)
 
 ## More
+
+This is a reference section with links, comparison tables, and implementation notes for common SC-300 lab questions.
 
 ### Study guide
 
@@ -150,6 +162,8 @@ Source: <https://msportals.io>
 
 ### Login with Microsoft Entra ID (+ Managed Identity on Azure VM)
 
+Role assignment prerequisites for Entra sign-in on Azure VMs.
+
 <https://learn.microsoft.com/en-us/entra/identity/devices/howto-vm-sign-in-azure-ad-windows#configure-role-assignments-for-the-vm>
 
 ### Managed identity with Azure KeyVault
@@ -170,6 +184,8 @@ Source: <https://msportals.io>
   - <https://www.vertec.com/ch/kb/openid-connect/>
 
 ### Friendly Takeover, Internal admin takeover
+
+Use this when a company must regain tenant admin control.
 
 <https://learn.microsoft.com/en-us/microsoft-365/admin/misc/become-the-admin?view=o365-worldwide>
 
@@ -213,6 +229,8 @@ Source: <https://msportals.io>
 
 ### Basic - App Registration vs Enterprise Apps
 
+Visual comparison of App Registration and Enterprise App.
+
 ![Multi-Tenant App](./path1_App-registration-vs-Enterprise-application-explained-3-1024x470.png)
 
 <!-- 
@@ -229,7 +247,7 @@ Standalone: No
 
 Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com/en-us/entra/identity/devices/hybrid-join-control#configure-client-side-registry-setting-for-scp>
 
-## Login with Microsoft Entra ID
+### Login with Microsoft Entra ID (RDP Username Format)
 
 - Username format (RDP): `AzureAD\\admin@[contoso].onmicrosoft.com`
 - RDP file property: `username:s:AzureAD\\admin@[contoso].onmicrosoft.com`
@@ -292,8 +310,23 @@ Targeted Entra hybrid join (client-side, ohne SCP): <https://learn.microsoft.com
 |  Creation  | Auto-created alongside the resource | Created separately as a standalone Azure resource, then attached |
 |  Assignment to other resources  | Bound to a single resource; cannot be reassigned | Can be assigned to any number of resources across types |
 |  Pre-deployment access  | Not available before the resource exists | Can be configured with role assignments before any resource is deployed |
-|  Compliance / Approval overhead  | New identity created per resource (more approvals required) | Single identity reused across resources ( fewer approvals) |
+|  Compliance / Approval overhead  | New identity created per resource (more approvals required) | Single identity reused across resources (fewer approvals) |
 |  Audit logging  | Logs identify the specific resource that acted | Logs show the shared identity, not the individual resource |
 |  Permission cleanup  | Automatic on resource deletion | Must be manually deleted; role assignments must be cleaned up separately |
 |  Rate limit risk (rapid deployments)  | Risk of hitting Entra ID object creation limits (HTTP 429) | One Service Principal regardless of how many resources use it |
+
+
+### Passwordless Sign-in (Zero Trust Lab - A)
+
+Lab for a basic passwordless sign-in flow.
+
+<https://microsoft.github.io/cloudlab/pswdlesspsi>
+
+![alt text](pathY_passwordless.png)
+
+### Temporary Access Pass (Zero Trust Lab - B)
+
+TAP is a temporary credential for passwordless onboarding.
+
+<https://microsoft.github.io/cloudlab/pswdlesswhfb#step-5-enable-the-temporary-access-pass-policy>
 
